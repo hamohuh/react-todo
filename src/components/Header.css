@@ -1,0 +1,38 @@
+.header{
+    width: 75%;
+    float: right;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 1%;
+}
+.header-name{
+    float: left;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    color:#000;
+    text-decoration: unset;
+}
+
+.header a{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    color:#000;
+    text-decoration: unset;
+}
+
+.header a:hover{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    color:#000;
+    text-decoration: unset;
+}
+
+.s-media{
+    float: right;
+}
+.s-media i{
+    margin-left: 10px;
+}
+.s-media i:hover{
+    color: rgb(63, 50, 27);
+}

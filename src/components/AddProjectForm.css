@@ -1,0 +1,25 @@
+.fade{
+    opacity: 9;
+}
+
+.add-project-button{
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    border: none;
+    background-color: #35495e;
+    font-size: 30px;
+    color: #ee8572;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.add-project-button:hover{
+    background-color: unset;
+    color: #ee8572;
+}
+.add-project-button:focus{
+    background-color: unset;
+    color: #ee8572;
+    box-shadow: unset;
+}

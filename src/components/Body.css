@@ -1,0 +1,88 @@
+.body{
+    width: 75%;
+    float: right;
+    border-top: 1px solid black;
+}
+
+.selected-project-name{
+    float: left;
+    color:#35495e;
+    font-size: 30px;
+    font-weight: 900;
+    padding: 6px;
+    margin-left: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.todos{
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 8%;
+}
+
+.todo-date{
+    float: right;
+    font-size: 17px;
+    vertical-align: middle;
+}
+
+#no-items-to-show{
+    text-align: center;
+    color:#4e040a;
+    font-size: 30px;
+    font-weight: 900;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.card{
+    background-color: unset;
+    box-shadow: 0px 7px 10px #000;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    cursor: pointer;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: .5%;
+}
+
+.card-header{
+    background-color: #35495e;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    color: wheat;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 60px;
+}
+
+.card-body, .collapse,.collapsing {
+    background-color: #63b7af;
+}
+
+.todo-name{
+    float: left;
+}
+
+.card-header:hover .todo-name{
+    color: thistle;
+}
+
+.delete-todo{
+    float: right;
+    margin-left: 5%;
+    font-size: 17px;
+    color: rgb(187, 183, 183);
+}
+
+.delete-todo:hover{
+   color: #dc3545;
+}
+
+.todo-done{
+    float: left;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.todo-label{
+    float: left;
+    margin-right: 15px;
+}

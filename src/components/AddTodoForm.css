@@ -1,0 +1,22 @@
+.add-todo-button {
+    float: right;
+    margin-right: 50px;
+    border: none;
+    background-color: unset;
+    font-size: 35px;
+    color: #35495e;
+    font-weight: 900;
+}
+.add-todo-button:hover {
+    border: none;
+    background-color: unset;
+    color: #21374e;
+    font-weight: 900;
+    cursor: pointer;
+}
+.add-todo-button:focus {
+    border: none;
+    background-color: unset;
+    color: #21374e;
+    box-shadow: unset
+}
