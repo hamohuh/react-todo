@@ -34,7 +34,7 @@ class App extends React.Component {
 
   // delete project from the projects
   deleteProject = (ProjectIndex) => {
-    let projects = this.state.projects;
+    let projects = [...this.state.projects];  // creating a copy of the array
     projects.splice(ProjectIndex, 1);
     this.setState({ projects });
     this.setState({ selectedProjectIndex: 0 });
@@ -44,22 +44,24 @@ class App extends React.Component {
   addProject = (item) => {
     item.id = Math.random();
     item.todos = [];
-    let newProjects = this.state.projects;
-    newProjects.push(item);
-    this.setState({ projects: newProjects });
+    const projects = this.state.projects.concat(item);
+    //or
+    /* let projects = [...this.state.projects];
+    projects.push(item) */
+    this.setState({ projects });
   }
 
   //add todo at a specific index to a projects
   addTodo = (item, index) => {
     item.id = Math.random();
-    let newProjects = this.state.projects;
-    newProjects[index].todos.push(item);
-    this.setState({ projects: newProjects });
+    let projects = [...this.state.projects];
+    projects[index].todos.push(item);
+    this.setState({ projects });
   }
 
   //delete todo at a specific index
   deleteTodo = (projectIndex, todoIndex) => {
-    let projects = this.state.projects;
+    let projects = [...this.state.projects];  // creating a copy of the array
 
     projects[projectIndex].todos.splice(todoIndex, 1);
     this.setState({ projects });
@@ -68,7 +70,7 @@ class App extends React.Component {
 
   //check if the todo is done done
   checkDone = (projectIndex, todoIndex) => {
-    let projects = this.state.projects;
+    let projects = [...this.state.projects];
     projects[projectIndex].todos[todoIndex].isDone = true;
     this.setState({ projects })
   }
