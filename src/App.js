@@ -10,8 +10,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    //get the saved data from localStorage
+    const storedProjects = localStorage.getItem("projectsArray");
+
     this.state = {
-      projects: [
+      projects: (storedProjects) ? JSON.parse(storedProjects) : [
         {
           id: 1, name: 'Tutorial 1', todos: [
             { id: 1, name: "Add project", date: '2020-02-20', description: "You can add a new project by clicking ' + ' next to My projects on the left top and type the project name then press 'Add'", isDone: true, priority: 'normal' },
@@ -37,6 +40,7 @@ class App extends React.Component {
     let projects = [...this.state.projects];  // creating a copy of the array
     projects.splice(ProjectIndex, 1);
     this.setState({ projects });
+    localStorage.setItem('projectsArray', JSON.stringify(projects));
     this.setState({ selectedProjectIndex: 0 });
   }
 
@@ -49,6 +53,7 @@ class App extends React.Component {
     /* let projects = [...this.state.projects];
     projects.push(item) */
     this.setState({ projects });
+    localStorage.setItem('projectsArray', JSON.stringify(projects));
   }
 
   //add todo at a specific index to a projects
@@ -57,6 +62,7 @@ class App extends React.Component {
     let projects = [...this.state.projects];
     projects[index].todos.push(item);
     this.setState({ projects });
+    localStorage.setItem('projectsArray', JSON.stringify(projects));
   }
 
   //delete todo at a specific index
@@ -65,6 +71,7 @@ class App extends React.Component {
 
     projects[projectIndex].todos.splice(todoIndex, 1);
     this.setState({ projects });
+    localStorage.setItem('projectsArray', JSON.stringify(projects));
 
   }
 
@@ -72,7 +79,8 @@ class App extends React.Component {
   checkDone = (projectIndex, todoIndex) => {
     let projects = [...this.state.projects];
     projects[projectIndex].todos[todoIndex].isDone = true;
-    this.setState({ projects })
+    this.setState({ projects });
+    localStorage.setItem('projectsArray', JSON.stringify(projects));
   }
 
   //callback function to get the projects Index from the child and pass it to the other child
