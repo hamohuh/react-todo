@@ -5,15 +5,12 @@ import { Form } from 'react-bootstrap';
 import './AddTodoForm.css'
 
 class AddTodoForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            show: false,
-            name: '',
-            date: '',
-            description: '',
-            priority: ''
-        }
+    state = {
+        show: false,
+        name: '',
+        date: '',
+        description: '',
+        priority: ''
     }
 
     //handle show and hide the form modal
@@ -42,8 +39,8 @@ class AddTodoForm extends React.Component {
     render() {
         return (
             <div>
-                <Button className='add-todo-button' title="Add new Todo" onClick={() => { this.handleShow() }}>+</Button>
-                <Modal show={this.state.show} onHide={() => { this.handleShow() }}>
+                <Button className='add-todo-button' title="Add new Todo" onClick={this.handleShow}>+</Button>
+                <Modal show={this.state.show} onHide={this.handleShow}>
                     <Modal.Header closeButton>Add Todo</Modal.Header>
                     <Modal.Body>
                         <Form onSubmit={this.handleSubmit}>
@@ -69,13 +66,13 @@ class AddTodoForm extends React.Component {
                                 </Form.Control>
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" onClick={() => { this.handleShow() }}>
+                            <Button variant="primary" type="submit" onClick={this.handleShow}>
                                 Add
                             </Button>
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={() => { this.handleShow() }}>Close</Button>
+                        <Button onClick={this.handleShow}>Close</Button>
                     </Modal.Footer>
                 </Modal>
             </div>

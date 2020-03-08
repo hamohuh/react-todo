@@ -14,7 +14,7 @@ class AddProjectForm extends React.Component {
     }
 
     //show and hide the modal Form
-    handleShow() {
+    handleShow = () => {
         this.setState({ show: !this.state.show })
     }
 
@@ -44,8 +44,8 @@ class AddProjectForm extends React.Component {
     render() {
         return (
             <div>
-                <Button className='add-project-button' title="Add New Project" onClick={() => { this.handleShow() }}>+</Button>
-                <Modal show={this.state.show} onHide={() => { this.handleShow() }}>
+                <Button className='add-project-button' title="Add New Project" onClick={this.handleShow}>+</Button>
+                <Modal show={this.state.show} onHide={this.handleShow}>
                     <Modal.Header closeButton>Add Project</Modal.Header>
                     <Modal.Body>
                         <Form onSubmit={this.handleSubmit}>
@@ -54,13 +54,13 @@ class AddProjectForm extends React.Component {
                                 <Form.Label>Project Name</Form.Label>
                                 <Form.Control required='required' type="text" placeholder="Project Name" onChange={this.handleChange} />
                             </Form.Group>
-                            <Button variant="primary" type="submit" onClick={() => { this.handleShow() }}>
+                            <Button variant="primary" type="submit" onClick={this.handleShow}>
                                 Add
                             </Button>
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={() => { this.handleShow() }}>Close</Button>
+                        <Button onClick={this.handleShow}>Close</Button>
                     </Modal.Footer>
                 </Modal>
             </div>
