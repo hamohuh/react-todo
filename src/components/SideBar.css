@@ -5,6 +5,7 @@
         width: 80%;
         margin: 0 auto;
         min-height: 300px !important;
+        padding-bottom: 30px;
     }
 }
 /* Small devices (landscape phones, 576px and up) */
@@ -12,6 +13,7 @@
     .side-bar {
         margin-top: 90px;
         min-height: 300px !important;
+        padding-bottom: 30px;
     }
 }
 
