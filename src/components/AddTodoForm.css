@@ -1,11 +1,18 @@
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .add-todo-button {
+        left: 50px;
+    }
+}
+
 .add-todo-button {
-    float: right;
-    margin-right: 50px;
     border: none;
     background-color: unset;
-    font-size: 35px;
+    font-size: 40px;
     color: #35495e;
     font-weight: 900;
+    position: absolute;
+    top: 30px;
 }
 .add-todo-button:hover {
     border: none;

@@ -1,29 +1,50 @@
-.body{
-    width: 75%;
-    float: right;
-    border-top: 1px solid black;
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .body{
+        margin-top: 90px;
+    }
+ }
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px){ 
+    .body{
+        margin-top: 90px;
+    }
+    .todo-date{
+        font-size: 15px !important;
+    }
+ }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) { 
+   .body{
+        margin-top: 0;
+        min-height: 500px;
+    }
+    .todo-date{
+        padding-left: 120px !important;
+    }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) { 
+   .body{
+        margin-top: 0;
+        min-height: 500px;
+    }
+    .todo-date{
+        padding-left: 70px !important;
+    }
+    .card{
+    width: 100% !important;
+    }
 }
 
 .selected-project-name{
-    float: left;
     color:#35495e;
     font-size: 30px;
     font-weight: 900;
     padding: 6px;
-    margin-left: 30px;
+    text-align: center;
+    margin-top: 40px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.todos{
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 8%;
-}
-
-.todo-date{
-    float: right;
-    font-size: 17px;
-    vertical-align: middle;
 }
 
 #no-items-to-show{
@@ -43,46 +64,44 @@
     margin: 0 auto;
     margin-top: .5%;
 }
-
 .card-header{
     background-color: #35495e;
     border: 1px solid rgba(0, 0, 0, 0.125);
     color: wheat;
-    font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    height: 60px;
 }
-
 .card-body, .collapse,.collapsing {
     background-color: #63b7af;
 }
-
-.todo-name{
-    float: left;
+.card-header .row{
+    align-items: center;
 }
-
+.todo-left-side{
+    padding: 0;
+}
+.todo-done{
+    font-size: 18px;
+    margin-left: 15px;
+}
+.todo-label{
+    margin-left: 15px;
+}
+.todo-name{
+    font-size: 20px;
+    margin-bottom: 0;
+}
 .card-header:hover .todo-name{
     color: thistle;
 }
-
+.todo-date{
+    font-size: 17px;
+    margin-bottom: 0;
+    padding: 0;
+}
 .delete-todo{
-    float: right;
-    margin-left: 5%;
     font-size: 17px;
     color: rgb(187, 183, 183);
 }
-
 .delete-todo:hover{
    color: #dc3545;
-}
-
-.todo-done{
-    float: left;
-    margin-right: 15px;
-    font-size: 18px;
-}
-
-.todo-label{
-    float: left;
-    margin-right: 15px;
 }

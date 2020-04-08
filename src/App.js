@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row } from 'react-bootstrap';
 import SideBar from './components/SideBar';
 import Header from './components/Header';
 import Body from './components/Body';
@@ -90,22 +91,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <Container fluid className="App">
         <Header />
-        <Body
-          projects={this.state.projects}
-          projectIndex={this.state.selectedProjectIndex}
-          addTodo={this.addTodo}
-          deleteTodo={this.deleteTodo}
-          checkDone={this.checkDone}
-        />
-        <SideBar
-          projects={this.state.projects}
-          deleteProject={this.deleteProject}
-          addProject={this.addProject}
-          callbackFromParent={this.myCallback}
-        />
-      </div>
+        <Row>
+          <SideBar
+            projects={this.state.projects}
+            deleteProject={this.deleteProject}
+            addProject={this.addProject}
+            callbackFromParent={this.myCallback}
+          />
+          <Body
+            projects={this.state.projects}
+            projectIndex={this.state.selectedProjectIndex}
+            addTodo={this.addTodo}
+            deleteTodo={this.deleteTodo}
+            checkDone={this.checkDone}
+          />
+        </Row>
+      </Container>
+
     )
   };
 }

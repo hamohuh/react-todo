@@ -4,7 +4,7 @@ import AddTodoForm from './AddTodoForm'
 import TodoDone from './TodoDone'
 import TodoLabel from './TodoLabel'
 import { Accordion } from 'react-bootstrap'
-import { Card } from 'react-bootstrap'
+import { Card, Col, Row } from 'react-bootstrap'
 
 function Body(props) {
 
@@ -26,26 +26,30 @@ function Body(props) {
             return (
                 <Card className='todo' key={item.id}>
                     <Accordion.Toggle className='card-header' as={Card.Header} eventKey={item.id}>
-
-                        <TodoDone
-                            projects={projects}
-                            checkDone={checkDone}
-                            projectIndex={projectIndex}
-                            todoIndex={todoIndex}
-                        />
-
-                        <TodoLabel
-                            projects={projects}
-                            projectIndex={projectIndex}
-                            todoIndex={todoIndex}
-                        />
-
-                        <p className='todo-name'>{item.name}</p>
-
-                        <span className="delete-todo" onClick={() => { deleteTodo(projectIndex, todoIndex) }} title="Delete"><i className="fa fa-trash"></i></span>
-
-                        <p className="todo-date">{item.date}</p>
-
+                        <Row>
+                            <Col xs={2} md={1} className="todo-left-side">
+                                <TodoDone
+                                    projects={projects}
+                                    checkDone={checkDone}
+                                    projectIndex={projectIndex}
+                                    todoIndex={todoIndex}
+                                />
+                                <TodoLabel
+                                    projects={projects}
+                                    projectIndex={projectIndex}
+                                    todoIndex={todoIndex}
+                                />
+                            </Col>
+                            <Col xs={10} md={7} className='todo-name'>
+                                {item.name}
+                            </Col>
+                            <Col xs={10} md={3} className="todo-date">
+                                {item.date}
+                            </Col>
+                            <Col xs={2} md={1} className="delete-todo">
+                                <span onClick={() => { deleteTodo(projectIndex, todoIndex) }} title="Delete"><i className="fa fa-trash"></i></span>
+                            </Col>
+                        </Row>
                     </Accordion.Toggle>
 
                     <Accordion.Collapse eventKey={item.id}>
@@ -71,7 +75,7 @@ function Body(props) {
         />)
 
     return (
-        <div className='body'>
+        <Col md={8} lg={9} className='body'>
 
             {projectName}
 
@@ -80,8 +84,7 @@ function Body(props) {
             {<Accordion className='todos'>
                 {todo()}
             </Accordion>}
-
-        </div>
+        </Col>
     )
 
 }

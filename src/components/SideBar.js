@@ -1,5 +1,6 @@
 import React from 'react';
 import './SideBar.css'
+import { Col } from 'react-bootstrap';
 import AddProjectForm from './AddProjectForm'
 
 
@@ -33,14 +34,13 @@ function SideBar(props) {
         )
 
     return (
-        <div className='side-bar'>
+        <Col md={4} lg={3} className='side-bar'>
             <p>MY Projects</p>
 
             <AddProjectForm addProject={addProject} />
 
             <div>{project}</div>
-
-        </div>
+        </Col>
     )
 }
 
