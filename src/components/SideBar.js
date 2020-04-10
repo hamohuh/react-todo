@@ -17,10 +17,9 @@ function SideBar(props) {
                 }
 
                 return (
-                    <div key={item.id} className='project-item'>
+                    <div key={item.id} tabIndex={item.id} className='project-item' onClick={showTodos}>
                         <span
                             className='project-name'
-                            onClick={showTodos}
                         >{item.name}</span>
 
                         <span

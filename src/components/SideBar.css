@@ -51,15 +51,14 @@
     font-weight: 600;
 }
 
-.project-item:hover{
+.project-item:hover,
+.project-item:focus{
     background-color: rgba(238, 133, 114, 0.1);
     cursor: pointer;
 }
 
 .project-name{
     float: left;
-    width: 80%;
-    height: 150%;
 }
 
 .delete-project{
